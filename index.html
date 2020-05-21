@@ -39,7 +39,7 @@
 	<div class="preview" id="svg_preview"></div>
 	<!--//Uploaded SVG Preview-->
 	<form id="svg_form" onsubmit="document.getElementById('data').click(); return false">
-		<label for="resize_value"></label><input type="number" id="resize_value" required placeholder="Enter Resize Value" oninput="playGround();exportResizedSvg();">
+		<label for="resize_value" style="color: white">Output size(px):<br></label><input type="number" id="resize_value" required value="50" oninput="playGround();exportResizedSvg();">
 	</form>
 	<div class="download-wrapper" id="download_wrapper">
 	<a href="data:" id="data" download="svg" class="download-png" target="_blank">Download PNG</a>
