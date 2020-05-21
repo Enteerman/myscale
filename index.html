@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="">
 <head>
+	<meta charset="UTF-8">
 	<title>myScale - Quick SVG Icon Resizer</title>
-	<meta name="description" content="Small Lightweight Tool scratched in Pure JavaScript to Quickly Resize and Convert SVG to PNG">
+	<meta name="description" content="Small Lightweight Tool scratched in Pure JavaScript to Quickly Resize and Convert SVG to PNG, now improved">
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--
 	<meta name="twitter:card" content="summary_large_image">
@@ -20,14 +21,16 @@
 </head>
 <body>
 	<!--Logo-->
-	<h1>myScale</h1>
-	<h2>Quick SVG Icon Resizer </h2>
+	<h1>myScale<sup>2</sup></h1>
+	<h2>Quicker<sup>*</sup> SVG Icon Resizer</h2>
 	<!--//Logo-->
-	<p class="promote"><a href="https://github.com/webkul/myscale" target="_blank">Fork at GitHub</a><a href="http://bit.ly/myscale-tweet" target="_blank">Tweet</a></p>
+	<p class="promote"><a href="https://github.com/Enteerman/myscale" target="_blank">Fork at GitHub</a></p>
 	<!--File Upload-->
-	<div class="btn-wrapper">
-		<label class="btn" for="file_upload">Upload SVG</label>
-		<input type="file" id="file_upload" accept=".svg">
+	<div class="upload-container" id="drop-container">
+	<label for="file_upload" class="button">
+		Upload SVG
+		<input hidden type="file" id="file_upload" accept=".svg">
+	</label>
 	</div>
 	<!--//File Upload-->
 
@@ -35,15 +38,14 @@
 	<!--Uploaded SVG Preview-->
 	<div class="preview" id="svg_preview"></div>
 	<!--//Uploaded SVG Preview-->
-	<form id="svg_form">
-		<input type="number" id="resize_value" required placeholder="Enter Resize Value">
-		<button type="button" onclick="playGround();exportResizedSvg();">Generate</button>
+	<form id="svg_form" onsubmit="document.getElementById('data').click(); return false">
+		<label for="resize_value"></label><input type="number" id="resize_value" required placeholder="Enter Resize Value" oninput="playGround();exportResizedSvg();">
 	</form>
 	<div class="download-wrapper" id="download_wrapper">
 	<a href="data:" id="data" download="svg" class="download-png" target="_blank">Download PNG</a>
 	</div>
 	<img src="" id="fromcanvas">
-	<p class="credits">Crafted with <span>&#10084;</span> at <a href="http://design.webkul.com" target="_blank">Webkul UXlab</a></p>
+	<p class="credits">Crafted with <span>&#10084;</span> at <a href="http://design.webkul.com" target="_blank">Webkul UXlab</a><br>Fork and improvements by Enterman</p>
 	<script src="assets/svg_todataurl.js"></script>
 	<script src="assets/script.js"></script>
 </body>
